@@ -1,0 +1,19 @@
+# Foclóir
+
+A dictionary server.
+
+Foclóir looks up words on dictionary.reference.com, and shows the results. It
+caches the definition.
+
+That's it, pretty much.
+
+Foclóir (fuc-LORE) is the Irish for dictionary.
+
+## Installation
+
+It's a Ruby on Rails application. Put it up on your server, create your
+database.yml file, and let it run.
+
+## Authors
+
+* JJ Buckley

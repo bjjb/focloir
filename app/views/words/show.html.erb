@@ -1,0 +1,7 @@
+<% title @word.word %>
+
+<%= @word.definition %>
+
+<p>
+  <%= link_to "Refresh", @word, :confirm => 'Are you sure?', :method => :delete %>
+</p>
