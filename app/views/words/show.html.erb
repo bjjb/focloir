@@ -1,7 +1,10 @@
-<% title @word.word %>
-
-<%= @word.definition %>
-
-<p>
-  <%= link_to "Refresh", @word, :confirm => 'Are you sure?', :method => :delete %>
+<%- div_for @word do -%>
+  <%- title @word.word -%>
+  <%= @word.definition %>
+<%- end -%>
+<p class='info'>
+  Last updated <%= time_ago_in_words(@word.updated_at) %> ago
+  <%- if @word.updated_at < 1.day.ago -%>
+    (<%= link_to "Refresh", @word, :method => :delete %>)
+  <%- end -%>
 </p>
