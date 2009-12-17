@@ -41,3 +41,12 @@ p.info a {
   font-style: oblique;
   text-decoration: underline;
 }
+#new_word {
+  margin-top: 1em;
+  text-align: center;
+}
+#new_word input {
+  font-size: 200%;
+  border: 1px solid #333;
+  padding: 0.3em;
+}

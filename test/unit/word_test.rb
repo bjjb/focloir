@@ -13,7 +13,7 @@ class WordTest < ActiveSupport::TestCase
   def test_definition_is_looked_up_on_create
     prepare_word("cat", "miaow")
     word = Word.create(:word => 'cat')
-    assert word.definition =~ "miaow"
+    assert word.definition =~ /miaow/
   end
 
   def test_definition_is_not_looked_up_if_set

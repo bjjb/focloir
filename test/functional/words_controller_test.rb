@@ -2,18 +2,20 @@ require 'test_helper'
 
 class WordsControllerTest < ActionController::TestCase
   def test_show
-    get :show, :id => Word.first
+    get :show, :id => 'dog'
+    assert_equal Word.find_by_word('dog'), assigns(:word)
     assert_template 'show'
   end
-  
-  def test_destroy
-    word = Word.first
-    delete :destroy, :id => word
-    assert_redirected_to root_url
-    assert !Word.exists?(word.id)
-  end
 
+  def test_show_an_existing_word_creates_it
+    assert_no_difference 'Word.count' do
+      get :show, :id => 'dog'
+    end
+  end
+  
   def setup
-    Word.find_or_create_by_word "dog", :definition => 'a barky thing'
+    prepare_word "dog", 'a barky thing'
+    get :show, :id => 'dog'
+    prepare_word "cat", 'a scratchy thing'
   end
 end

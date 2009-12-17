@@ -3,6 +3,7 @@ require File.expand_path(File.dirname(__FILE__) + "/../config/environment")
 require 'test_help'
 
 Word.source = File.expand_path(File.join(Rails.root, "tmp", "definitions"))
+FileUtils.mkdir_p(Word.source)
 
 class ActiveSupport::TestCase
   def prepare_word(word, definition)
