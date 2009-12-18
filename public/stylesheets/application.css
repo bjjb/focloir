@@ -11,6 +11,9 @@ h1,h2,h3,h4,h5,h6 {
   font-family: georgia, times, serif;
   color: #020202;
 }
+h1 {
+  font-size: 4em;
+}
 
 a img {
   border: none;
@@ -43,10 +46,15 @@ p.info a {
 }
 #new_word {
   margin-top: 1em;
-  text-align: center;
+  text-align: right;
+  min-width: 42em;
 }
 #new_word input {
+  max-width: 14em;
   font-size: 200%;
-  border: 1px solid #333;
+  font-weight: bold;
+  border: 2px solid #333;
+  -moz-border-radius: 0.5em;
+  -webkit-border-radius: 0.3em;
   padding: 0.3em;
 }
