@@ -16,14 +16,13 @@ class Word < ActiveRecord::Base
 
 private
   def sanitize_word!
-    word.strip!
-    word.downcase!
+    self.word = URI::unescape(word.strip.downcase).gsub('+', ' ')
   end
 
   def lookup_definition!
     if definition.blank?
       logger.debug "Looking up '#{word}' on #{source}"
-      page = open("#{source}/#{word}").read
+      page = open("#{source}/#{URI::escape(word)}").read
       self.definition = Nokogiri(page).search('div.pbk').collect(&:to_s).join
     end
   end
